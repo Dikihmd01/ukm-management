@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_ccstmiktsm_ccstmiktsm,ccstmiktsm.ccstmiktsm,model_ccstmiktsm_ccstmiktsm,base.group_user,1,1,1,1
+access_ccstmiktsm_eventtype,access.ccstmiktsm.eventtype,model_ccstmiktsm_eventtype,,1,1,1,1

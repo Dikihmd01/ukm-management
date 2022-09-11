@@ -6,5 +6,11 @@
         id="ccstmiktsm_menu_root"
         name="Computer Club STMIK Tasikmalaya"
         sequence="10"/>
+    
+    <menuitem
+        id="ccstmiktsm_event_menu_categ"
+        name="Acara"
+        parent="ccstmiktsm_menu_root"
+        sequence="31"/>
 
 </odoo>
