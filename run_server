@@ -1,0 +1,1 @@
+./odoo-bin --addons-path=/home/geekman/src/ukm-management/addons,/home/geekman/src/ukm-management/custom -d ccstmiktsm --db_port 5432 --xmlrpc-port=8070 --limit-memory-hard 0 --limit-time-real=10000 -u ccstmiktsm --dev xml
