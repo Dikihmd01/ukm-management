@@ -31,6 +31,7 @@
         'views/member_views.xml',
         'views/sequence.xml',
         'views/event_type_views.xml',
+        'views/event_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

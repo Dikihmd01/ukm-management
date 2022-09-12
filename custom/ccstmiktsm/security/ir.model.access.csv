@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_ccstmiktsm_eventtype,access.ccstmiktsm.eventtype,model_ccstmiktsm_eventtype,,1,1,1,1
+access_ccstmiktsm_event,access.ccstmiktsm.event,model_ccstmiktsm_event,,1,1,1,1

@@ -12,6 +12,10 @@ class EventTypes(models.Model):
                                 required=True,
                                 default='New')
     description = fields.Char(string='Deskripsi kegiatan')
+    event_ids = fields.One2many(comodel_name='ccstmiktsm.event',
+                                inverse_name='event_type_id',
+                                string='Acara')
+    
 
     @api.model
     def create(self, vals):

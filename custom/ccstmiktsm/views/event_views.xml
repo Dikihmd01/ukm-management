@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- ccstmiktsm.event tree view -->
+    <record id="ccstmiktsm_event_view_tree" model="ir.ui.view">
+        <field name="name">ccstmiktsm.event.view.tree</field>
+        <field name="model">ccstmiktsm.event</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="event_code"/>
+                <field name="event_type_id"/>
+                <field name="speaker"/>
+                <field name="division_of_speaker"/>
+                <field name="event_date"/>
+                <field name="place"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- ccstmiktsm.event search view -->
+    <!-- <record id="ccstmiktsm_event_view_search" model="ir.ui.view">
+        <field name="name">ccstmiktsm.event.view.search</field>
+        <field name="model">ccstmiktsm.event</field>
+        <field name="arch" type="xml">
+            <search string="Filter BUku">
+                <field name="name"/>
+                <field name="event_code"/>
+                <field name="event_type_id"/>
+                <field name="speaker"/>
+                <field name="division_of_speaker"/>
+                <field name="event_date"/>
+                <field name="place"/>
+                <separator/>
+                <filter name="readystock" string="Ready Stok"
+                        domain="[('stock', '>', 0)]" />
+                <group string="Group by" expand="1">
+                    <filter name="penerbit" string="Penerbit"
+                            context="{'group_by':'publisher_id', 'residual_visible':True}" />
+                </group>
+                <group string="Group by" expand="1">
+                    <filter name="kategori" string="Kategori"
+                            context="{'group_by':'category_id', 'residual_visible':True}" />
+                </group>
+            </search>
+        </field>
+    </record> -->
+
+    <!-- ccstmiktsm.event form view -->
+    <record id="ccstmiktsm_event_view_form" model="ir.ui.view">
+        <field name="name">ccstmiktsm.event.view.form</field>
+        <field name="model">ccstmiktsm.event</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <div class="row">
+                        <div class="container">
+                            <div class="oe_title">
+                                <div class="col-md-12">
+                                    <div class="oe_edit_only">
+                                        <label for="event_code" />
+                                    </div>
+                                    <b>
+                                        <field name="event_code" class="o_text_overflow"/>
+                                    </b>
+
+                                    <div class="oe_edit_only">
+                                        <label for="name" />
+                                    </div>
+                                    <h1>
+                                        <field name="name" class="o_text_overflow"/>
+                                    </h1>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-12">
+                                        <group name="Buku" string="Buku">
+                                            <field name="event_type_id"/>
+                                            <field name="speaker"/>
+                                            <field name="division_of_speaker"/>
+                                            <field name="event_date"/>
+                                            <field name="place"/>
+                                        </group>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ccstmiktsm_event_action" model="ir.actions.act_window">
+        <field name="name">Daftar Acara</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ccstmiktsm.event</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem
+        id="ccstmiktsm_event_menu_act"
+        name="Daftar Acara" 
+        parent="ccstmiktsm_event_menu_categ"
+        action="ccstmiktsm_event_action"
+        sequence="10"/>
+
+</odoo>
