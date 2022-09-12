@@ -19,7 +19,7 @@
     </record>
     
     <!-- ccstmiktsm.event search view -->
-    <!-- <record id="ccstmiktsm_event_view_search" model="ir.ui.view">
+    <record id="ccstmiktsm_event_view_search" model="ir.ui.view">
         <field name="name">ccstmiktsm.event.view.search</field>
         <field name="model">ccstmiktsm.event</field>
         <field name="arch" type="xml">
@@ -32,19 +32,37 @@
                 <field name="event_date"/>
                 <field name="place"/>
                 <separator/>
-                <filter name="readystock" string="Ready Stok"
-                        domain="[('stock', '>', 0)]" />
+                <filter name="se" string="Pemateri SE"
+                        domain="[('division_of_speaker', '=', 'SE')]" />
+                <filter name="pd" string="Pemateri PD"
+                        domain="[('division_of_speaker', '=', 'PD')]" />
+                <filter name="ba" string="Pemateri BA"
+                        domain="[('division_of_speaker', '=', 'BA')]" />
+                <filter name="ccpasif" string="Pemateri CC Pasif"
+                        domain="[('division_of_speaker', '=', 'ccpasif')]" />
+                <filter name="external" string="Pemateri External"
+                        domain="[('division_of_speaker', '=', 'External')]" />
+                <separator/>
+                <filter name="ccroutine" string="CC Routine"
+                        domain="[('event_type_id', '=', 'CC Routine')]" />
+                <filter name="cctalk" string="CC Talk"
+                        domain="[('event_type_id', '=', 'CC Talk')]" />
+                <filter name="ccclas" string="CC Class"
+                        domain="[('event_type_id', '=', 'CC Class')]" />
+                <filter name="ccjourney" string="CC Journey"
+                        domain="[('event_type_id', '=', 'CC Journey')]" />
+
                 <group string="Group by" expand="1">
-                    <filter name="penerbit" string="Penerbit"
-                            context="{'group_by':'publisher_id', 'residual_visible':True}" />
+                    <filter name="asal pemateri" string="Asal pemateri"
+                            context="{'group_by':'division_of_speaker', 'residual_visible':True}" />
                 </group>
                 <group string="Group by" expand="1">
-                    <filter name="kategori" string="Kategori"
-                            context="{'group_by':'category_id', 'residual_visible':True}" />
+                    <filter name="Jenis Kegiatan" string="Jenis Kegiatan"
+                            context="{'group_by':'event_type_id', 'residual_visible':True}" />
                 </group>
             </search>
         </field>
-    </record> -->
+    </record>
 
     <!-- ccstmiktsm.event form view -->
     <record id="ccstmiktsm_event_view_form" model="ir.ui.view">
@@ -94,7 +112,7 @@
     </record>
 
     <record id="ccstmiktsm_event_action" model="ir.actions.act_window">
-        <field name="name">Daftar Acara</field>
+        <field name="name">Daftar Kegiatan</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">ccstmiktsm.event</field>
         <field name="view_mode">tree,form</field>
@@ -102,7 +120,7 @@
     
     <menuitem
         id="ccstmiktsm_event_menu_act"
-        name="Daftar Acara" 
+        name="Daftar Kegiatan" 
         parent="ccstmiktsm_event_menu_categ"
         action="ccstmiktsm_event_action"
         sequence="10"/>

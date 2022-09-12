@@ -76,7 +76,7 @@
     
     <menuitem
         id="ccstmiktsm_eventtype_menu_act"
-        name="Jenis Acara" 
+        name="Jenis Kegiatan" 
         parent="ccstmiktsm_event_menu_categ"
         action="ccstmiktsm_eventtype_action"
         sequence="31"/>

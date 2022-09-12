@@ -5,16 +5,16 @@ class EventTypes(models.Model):
     _name = 'ccstmiktsm.eventtype'
     _description = 'Jenis Kegiatan'
 
-    name = fields.Char(string='Jenis kegiatan')
-    event_type_code = fields.Char(string='Kode jenis acara',
+    name = fields.Char(string='Jenis Kegiatan')
+    event_type_code = fields.Char(string='Kode Jenis Kegiatan',
                                 readonly=True,
                                 copy=False,
                                 required=True,
                                 default='New')
-    description = fields.Char(string='Deskripsi kegiatan')
+    description = fields.Char(string='Deskripsi Kegiatan')
     event_ids = fields.One2many(comodel_name='ccstmiktsm.event',
                                 inverse_name='event_type_id',
-                                string='Acara')
+                                string='Kegiatan')
     
 
     @api.model

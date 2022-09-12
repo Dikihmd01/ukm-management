@@ -13,14 +13,14 @@ class Events(models.Model):
         ('external', 'External'),
     ]
 
-    name = fields.Char(string='Nama kegiatan')
-    event_code = fields.Char(string='Kode acara',
+    name = fields.Char(string='Nama Kegiatan')
+    event_code = fields.Char(string='Kode Kegiatan',
                             readonly=True,
                             copy=False,
                             required=True,
                             default='New')
     event_type_id = fields.Many2one(comodel_name='ccstmiktsm.eventtype',
-                                    string='Jenis kegiatan',
+                                    string='Jenis Kegiatan',
                                     required=True)
     speaker = fields.Char(string='Pemateri',
                             required=True)
