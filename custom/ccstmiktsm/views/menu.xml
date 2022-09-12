@@ -12,5 +12,11 @@
         name="Kegiatan"
         parent="ccstmiktsm_menu_root"
         sequence="31"/>
+    
+    <menuitem
+        id="ccstmiktsm_letter_menu_categ"
+        name="Surat Keluar Masuk"
+        parent="ccstmiktsm_menu_root"
+        sequence="35"/>
 
 </odoo>
