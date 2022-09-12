@@ -1,48 +1,48 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
 
-    <!-- ccstmiktsm.incomingletter tree view -->
-    <record id="ccstmiktsm_incomingletter_view_tree" model="ir.ui.view">
-        <field name="name">ccstmiktsm.incomingletter.view.tree</field>
-        <field name="model">ccstmiktsm.incomingletter</field>
+    <!-- ccstmiktsm.outcomingletter tree view -->
+    <record id="ccstmiktsm_outcomingletter_view_tree" model="ir.ui.view">
+        <field name="name">ccstmiktsm.outcomingletter.view.tree</field>
+        <field name="model">ccstmiktsm.outcomingletter</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="incoming_code"/>
+                <field name="outcoming_code"/>
                 <field name="name"/>
-                <field name="letter_from"/>
+                <field name="destination"/>
                 <field name="sender_name"/>
-                <field name="date_incoming"/>
+                <field name="date_outcoming"/>
                 <field name="received_by"/>
                 <field name="state"/>
             </tree>
         </field>
     </record>
     
-    <!-- ccstmiktsm.incomingletter search view -->
-    <record id="ccstmiktsm_incomingletter_view_search" model="ir.ui.view">
-        <field name="name">ccstmiktsm.incomingletter.view.search</field>
-        <field name="model">ccstmiktsm.incomingletter</field>
+    <!-- ccstmiktsm.outcomingletter search view -->
+    <record id="ccstmiktsm_outcomingletter_view_search" model="ir.ui.view">
+        <field name="name">ccstmiktsm.outcomingletter.view.search</field>
+        <field name="model">ccstmiktsm.outcomingletter</field>
         <field name="arch" type="xml">
-            <search string="Filter BUku">
-                <field name="incoming_code"/>
+            <search string="Filter Surat Keluar">
+                <field name="outcoming_code"/>
                 <field name="name"/>
-                <field name="letter_from"/>
+                <field name="destination"/>
                 <field name="sender_name"/>
-                <field name="date_incoming"/>
+                <field name="date_outcoming"/>
                 <field name="state"/>
                 <separator/>
                 <filter name="lfm" string="Surat Dari LFM"
-                        domain="[('letter_from', '=', 'LFM')]" />
+                        domain="[('destination', '=', 'LFM')]" />
                 <filter name="fdk" string="Surat Dari FDK"
-                        domain="[('letter_from', '=', 'FDK')]" />
+                        domain="[('destination', '=', 'FDK')]" />
                 <filter name="mb" string="Surat Dari MB"
-                        domain="[('letter_from', '=', 'MB')]" />
+                        domain="[('destination', '=', 'MB')]" />
                 <filter name="padus" string="Surat Dari Padus"
-                        domain="[('letter_from', '=', 'Padus')]" />
+                        domain="[('destination', '=', 'Padus')]" />
                 <filter name="mapalas" string="Surat Dari Mapalas"
-                        domain="[('letter_from', '=', 'Mapalas')]" />
+                        domain="[('destination', '=', 'Mapalas')]" />
                 <filter name="homeband" string="Surat Dari Homeband"
-                        domain="[('letter_from', '=', 'Homeband')]" />
+                        domain="[('destination', '=', 'Homeband')]" />
                 <separator/>
 
                 
@@ -52,18 +52,18 @@
                 </group>
                 <group string="Group by" expand="1">
                     <filter name="ukm" string="UKM"
-                            context="{'group_by':'letter_from', 'residual_visible':True}" />
+                            context="{'group_by':'destination', 'residual_visible':True}" />
                 </group>
             </search>
         </field>
     </record>
 
-    <!-- ccstmiktsm.incomingletter form view -->
-    <record id="ccstmiktsm_incomingletter_view_form" model="ir.ui.view">
-        <field name="name">ccstmiktsm.incomingletter.view.form</field>
-        <field name="model">ccstmiktsm.incomingletter</field>
+    <!-- ccstmiktsm.outcomingletter form view -->
+    <record id="ccstmiktsm_outcomingletter_view_form" model="ir.ui.view">
+        <field name="name">ccstmiktsm.outcomingletter.view.form</field>
+        <field name="model">ccstmiktsm.outcomingletter</field>
         <field name="arch" type="xml">
-            <form string="Form Surat Masuk">
+            <form string="Form Surat Keluar">
                 <header>
                     <button string="Terkirim"
                         name="action_sent"
@@ -102,10 +102,10 @@
                             <div class="oe_title">
                                 <div class="col-md-12">
                                     <div class="oe_edit_only">
-                                        <label for="incoming_code" />
+                                        <label for="outcoming_code" />
                                     </div>
                                     <b>
-                                        <field name="incoming_code" class="o_text_overflow"/>
+                                        <field name="outcoming_code" class="o_text_overflow"/>
                                     </b>
 
                                     <div class="oe_edit_only">
@@ -121,9 +121,9 @@
                                 <div class="container">
                                     <div class="col-md-12">
                                         <group name="Surat Masuk" string="Surat Masuk">
-                                            <field name="letter_from"/>
+                                            <field name="destination"/>
                                             <field name="sender_name"/>
-                                            <field name="date_incoming"/>
+                                            <field name="date_outcoming"/>
                                             <field name="received_by"/>
                                         </group>
                                     </div>
@@ -136,18 +136,18 @@
         </field>
     </record>
 
-    <record id="ccstmiktsm_incomingletter_action" model="ir.actions.act_window">
-        <field name="name">Daftar Surat Masuk</field>
+    <record id="ccstmiktsm_outcomingletter_action" model="ir.actions.act_window">
+        <field name="name">Daftar Surat Keluar</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">ccstmiktsm.incomingletter</field>
+        <field name="res_model">ccstmiktsm.outcomingletter</field>
         <field name="view_mode">tree,form</field>
     </record>
     
     <menuitem
-        id="ccstmiktsm_incomingletter_menu_act"
-        name="Surat Masuk" 
+        id="ccstmiktsm_outcomingletter_menu_act"
+        name="Surat Keluar" 
         parent="ccstmiktsm_letter_menu_categ"
-        action="ccstmiktsm_incomingletter_action"
+        action="ccstmiktsm_outcomingletter_action"
         sequence="10"/>
 
 </odoo>

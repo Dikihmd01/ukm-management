@@ -3,6 +3,14 @@
     
     <data noupdate="1">
 
+        <record id="seq_ccstmiktsm_outcomingletter" model="ir.sequence">
+            <field name="name">Kode Kegiatan</field>
+            <field name="code">ccstmiktsm.outcomingletter</field>
+            <field name="prefix">CC/SURAT/KELUAR/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
         <record id="seq_ccstmiktsm_incomingletter" model="ir.sequence">
             <field name="name">Kode Kegiatan</field>
             <field name="code">ccstmiktsm.incomingletter</field>
