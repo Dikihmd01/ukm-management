@@ -26,12 +26,17 @@
             <xpath expr="//field[@name='vat']" position="before">
                 <field name="npm" />
                 <field name="major" />
-                <field name="state" />
             </xpath>
             <xpath expr="//field[@name='function']" position="attributes">
                 <attribute name="string">Divisi</attribute>
             </xpath>
             <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='street2']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_type']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
             <xpath expr="//field[@name='mobile']" position="attributes">
@@ -43,9 +48,6 @@
             <xpath expr="//field[@name='function']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
-            <xpath expr="//field[@name='function']" position="before">
-                <field name="batch" />
-            </xpath>
             <xpath expr="//field[@name='category_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
@@ -54,6 +56,9 @@
             </xpath>
             <xpath expr="//field[@name='title']" position="attributes">
                 <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='division']" position="before">
+                <field name="state" />
             </xpath>
         </field>
     </record>
