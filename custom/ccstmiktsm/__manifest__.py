@@ -34,8 +34,9 @@
         'views/event_views.xml',
         'views/incoming_letter_views.xml',
         'views/outcoming_letter_views.xml',
-        'views/income_views.xml',
         'views/balance_views.xml',
+        'views/income_views.xml',
+        'views/outcome_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

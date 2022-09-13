@@ -5,3 +5,4 @@ access_ccstmiktsm_incomingletter,access.ccstmiktsm.incomingletter,model_ccstmikt
 access_ccstmiktsm_outcomingletter,access.ccstmiktsm.outcomingletter,model_ccstmiktsm_outcomingletter,,1,1,1,1
 access_ccstmiktsm_balance,access.ccstmiktsm.balance,model_ccstmiktsm_balance,,1,1,1,1
 access_ccstmiktsm_income,access.ccstmiktsm.income,model_ccstmiktsm_income,,1,1,1,1
+access_ccstmiktsm_outcome,access.ccstmiktsm.outcome,model_ccstmiktsm_outcome,,1,1,1,1

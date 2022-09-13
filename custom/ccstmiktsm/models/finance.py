@@ -15,13 +15,26 @@ class Balance(models.Model):
         inverse_name='balance_id',
         string='Pemasukan'
     )
+    outcome_ids = fields.One2many(
+        comodel_name='ccstmiktsm.outcome',
+        inverse_name='balance_id',
+        string='Pemasukan'
+    )
     
-    @api.depends('income_ids')
+    @api.depends('income_ids', 'outcome_ids')
     def _compute_saldo(self):
         for line in self:
-            result = sum(self.env['ccstmiktsm.income'].search(
-                [('balance_id', '=', line.id)]).mapped('new_income'))
-            line.saldo = result
+            if line.income_ids:
+                print("passed 1")
+                incomes = sum(self.env['ccstmiktsm.income'].search(
+                    [('balance_id', '=', line.id)]).mapped('new_income'))
+                line.saldo = incomes
+            
+            if line.outcome_ids:
+                print("passed 2")
+                outcomes = sum(self.env['ccstmiktsm.outcome'].search(
+                    [('balance_id', '=', line.id)]).mapped('new_outcome'))
+                line.saldo = line.saldo - outcomes
 
 
 class Income(models.Model):
@@ -62,4 +75,32 @@ class Income(models.Model):
 
         result = super(Income, self).create(vals)
         return result
+    
+class Outcome(models.Model):
+    _name = 'ccstmiktsm.outcome'
+    _description = 'Pengeluaran'
 
+    name = fields.Char(string='Keterangan')
+    date_out = fields.Date(string='Tanggal')
+    outcome_code = fields.Char(
+        string='Kode Pengeluaran',
+        readonly=True,
+        copy=False,
+        required=True,
+        default='New'
+    )
+    balance_id = fields.Many2one(
+        comodel_name='ccstmiktsm.balance',
+        string='Saldo',
+    )
+    new_outcome = fields.Integer(string='Jumlah')
+   
+    @api.model
+    def create(self, vals):
+        if vals.get('outcome_code', 'New') == 'New':
+            vals['outcome_code'] = self.env['ir.sequence'].next_by_code(
+                'ccstmiktsm.outcome' or 'New'
+            )
+
+        result = super(Outcome, self).create(vals)
+        return result
