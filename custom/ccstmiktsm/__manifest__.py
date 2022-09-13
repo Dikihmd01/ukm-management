@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'report_xlsx'],
 
     # always loaded
     'data': [
@@ -37,6 +37,7 @@
         'views/balance_views.xml',
         'views/income_views.xml',
         'views/outcome_views.xml',
+        'report/report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
