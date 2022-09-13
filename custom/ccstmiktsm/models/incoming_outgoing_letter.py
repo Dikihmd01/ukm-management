@@ -49,6 +49,9 @@ class IncomingLetter(models.Model):
         required=True,
         readonly=True,
         default='draft')
+    archive = fields.Binary(string='Arsip')
+    file_name = fields.Char(string='Nama File')
+    
 
     @api.model
     def create(self, vals):
@@ -130,6 +133,8 @@ class OutcomingLetter(models.Model):
         required=True,
         readonly=True,
         default='draft')
+    archive = fields.Binary(string='Arsip')
+    file_name = fields.Char(string='Nama File')
     
 
     @api.model

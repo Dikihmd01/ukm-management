@@ -14,6 +14,7 @@
                 <field name="date_incoming"/>
                 <field name="received_by"/>
                 <field name="state"/>
+                <field name="file_name" string="Arsip"/>
             </tree>
         </field>
     </record>
@@ -30,6 +31,7 @@
                 <field name="sender_name"/>
                 <field name="date_incoming"/>
                 <field name="state"/>
+                <field name="file_name" string="Arsip"/>
                 <separator/>
                 <filter name="lfm" string="Surat Dari LFM"
                         domain="[('letter_from', '=', 'LFM')]" />
@@ -125,6 +127,8 @@
                                             <field name="sender_name"/>
                                             <field name="date_incoming"/>
                                             <field name="received_by"/>
+                                            <field name="archive" filename="file_name"/>
+                                            <field name="file_name" invisible="1"/>
                                         </group>
                                     </div>
                                 </div>
