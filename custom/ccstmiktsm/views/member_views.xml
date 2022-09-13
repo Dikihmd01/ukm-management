@@ -8,11 +8,15 @@
         <field name="mode">extension</field>
         <field name="inherit_id" ref="base.view_partner_tree"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='display_name']" position="before">
+                <field name="npm" />
+            </xpath>  
             <xpath expr="//field[@name='vat']" position="after">
                 <field name="npm" />
                 <field name="major" />
+                <field name="division" />
                 <field name="state" />
-            </xpath>   
+            </xpath>
         </field>
     </record>
 
@@ -83,7 +87,7 @@
         <field name="view_mode">tree,form,kanban</field>
         <field name="context">
             {
-                'search_default_member': 1,
+                'search_default_state': 1,
                 'default_state':'aktif'
             }
         </field>
