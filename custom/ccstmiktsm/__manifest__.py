@@ -38,6 +38,8 @@
         'views/income_views.xml',
         'views/outcome_views.xml',
         'report/report.xml',
+        'report/export_incoming_letter_to_pdf.xml',
+        'report/export_outcoming_letter_to_pdf.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
