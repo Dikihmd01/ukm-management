@@ -18,5 +18,11 @@
         name="Surat Keluar Masuk"
         parent="ccstmiktsm_menu_root"
         sequence="35"/>
+    
+    <menuitem
+        id="ccstmiktsm_finance_menu_categ"
+        name="Keuangan"
+        parent="ccstmiktsm_menu_root"
+        sequence="35"/>
 
 </odoo>
