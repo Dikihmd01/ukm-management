@@ -33,28 +33,44 @@
                 <field name="state"/>
                 <field name="file_name" string="Arsip"/>
                 <separator/>
-                <filter name="lfm" string="Surat Dari LFM"
-                        domain="[('destination', '=', 'LFM')]" />
-                <filter name="fdk" string="Surat Dari FDK"
-                        domain="[('destination', '=', 'FDK')]" />
-                <filter name="mb" string="Surat Dari MB"
-                        domain="[('destination', '=', 'MB')]" />
-                <filter name="padus" string="Surat Dari Padus"
-                        domain="[('destination', '=', 'Padus')]" />
-                <filter name="mapalas" string="Surat Dari Mapalas"
-                        domain="[('destination', '=', 'Mapalas')]" />
-                <filter name="homeband" string="Surat Dari Homeband"
-                        domain="[('destination', '=', 'Homeband')]" />
+                <filter 
+                    name="lfm"
+                    string="Surat Dari LFM"
+                    domain="[('destination', '=', 'LFM')]" />
+                <filter
+                    name="fdk"
+                    string="Surat Dari FDK"
+                    domain="[('destination', '=', 'FDK')]" />
+                <filter 
+                    name="mb" 
+                    string="Surat Dari MB"
+                    domain="[('destination', '=', 'MB')]" />
+                <filter 
+                    name="padus"
+                    string="Surat Dari Padus"
+                    domain="[('destination', '=', 'Padus')]" />
+                <filter 
+                    name="mapalas" 
+                    string="Surat Dari Mapalas"
+                    domain="[('destination', '=', 'Mapalas')]" />
+                <filter 
+                    name="homeband" 
+                    string="Surat Dari Homeband"
+                    domain="[('destination', '=', 'Homeband')]" />
                 <separator/>
 
                 
                 <group string="Group by" expand="1">
-                    <filter name="penerima" string="Nama Penerima"
-                            context="{'group_by':'received_by', 'residual_visible':True}" />
+                    <filter 
+                        name="penerima" 
+                        string="Nama Penerima"
+                        context="{'group_by':'received_by', 'residual_visible':True}" />
                 </group>
                 <group string="Group by" expand="1">
-                    <filter name="ukm" string="UKM"
-                            context="{'group_by':'destination', 'residual_visible':True}" />
+                    <filter 
+                        name="ukm" 
+                        string="UKM"
+                        context="{'group_by':'destination', 'residual_visible':True}" />
                 </group>
             </search>
         </field>
@@ -107,14 +123,19 @@
                                         <label for="outcoming_code" />
                                     </div>
                                     <b>
-                                        <field name="outcoming_code" class="o_text_overflow"/>
+                                        <field
+                                            name="outcoming_code"
+                                            class="o_text_overflow"/>
                                     </b>
 
                                     <div class="oe_edit_only">
                                         <label for="name" />
                                     </div>
                                     <h1>
-                                        <field name="name" class="o_text_overflow"/>
+                                        <field
+                                            name="name"
+                                            class="o_text_overflow"
+                                            attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
                                     </h1>
                                 </div>
                             </div>
@@ -123,11 +144,22 @@
                                 <div class="container">
                                     <div class="col-md-12">
                                         <group name="Surat Masuk" string="Surat Masuk">
-                                            <field name="destination"/>
-                                            <field name="sender_name"/>
-                                            <field name="date_outcoming"/>
-                                            <field name="received_by"/>
-                                            <field name="archive" filename="file_name"/>
+                                            <field
+                                                name="destination"
+                                                attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                                            <field
+                                                name="sender_name"
+                                                attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                                            <field
+                                                name="date_outcoming"
+                                                attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                                            <field
+                                                name="received_by"
+                                                attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                                            <field
+                                                name="archive"
+                                                filename="file_name"
+                                                attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
                                             <field name="file_name" invisible="1"/>
                                         </group>
                                     </div>
